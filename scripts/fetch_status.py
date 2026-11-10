@@ -323,12 +323,63 @@ def summarize_bill(cfg_bill, recs, crs, cache):
     return out
 
 
+# ---------------------------------------------------------------- discovery
+# Finds FY appropriations bills Congress.gov has that config/bills.json does not list yet (above all the
+# Senate committee's bills), by reading the bill lists filtered to recently updated bills. Keyword rules
+# map each title to one of the 12 subcommittee bills; anything unmapped is only flagged.
+SUBJECT_WORDS = [
+    ("mcva", r"military construction"),
+    ("ag", r"agricultur"),
+    ("cjs", r"commerce, justice"),
+    ("ew", r"energy and water"),
+    ("fsgg", r"financial services"),
+    ("dhs", r"homeland security"),
+    ("int", r"interior"),
+    ("lhhs", r"labor, health"),
+    ("leg", r"legislative branch"),
+    ("nss", r"(state, foreign operations|national security, department of state|department of state)"),
+    ("thud", r"transportation"),
+    ("def", r"(department of defense|defense appropriations)"),
+]
+
+
+def discover(cfg, key, days):
+    fy = cfg["fiscalYear"]
+    fy_re = re.compile(rf"(Appropriations Act, {fy}|fiscal year ending September 30, {fy})", re.I)
+    known = {(r["type"], r["number"]) for b in cfg["bills"] for r in (b.get("house"), b.get("senate")) if r}
+    known |= {(c["bill"]["type"], c["bill"]["number"]) for c in cfg.get("stopgaps", [])}
+    since = (dt.datetime.now(dt.timezone.utc) - dt.timedelta(days=days)).strftime("%Y-%m-%dT00:00:00Z")
+    found = []
+    for t in ("s", "hr", "hjres", "sjres"):
+        offset = 0
+        while offset < 2000:
+            page = json.loads(get(f"https://api.congress.gov/v3/bill/{CONGRESS}/{t}?format=json&limit=250&offset={offset}"
+                                  f"&sort=updateDate+desc&fromDateTime={since}&api_key={key}", "congress"))
+            for b in page.get("bills", []):
+                title = b.get("title") or ""
+                num = int(b.get("number"))
+                if fy_re.search(title) and (t, num) not in known:
+                    subj = None
+                    if not re.search(r"continuing appropriations", title, re.I):
+                        for sid, pat in SUBJECT_WORDS:
+                            if re.search(pat, title, re.I):
+                                subj = sid
+                                break
+                    found.append({"type": t, "number": num, "title": title, "subject": subj,
+                                  "latestAction": (b.get("latestAction") or {}).get("text")})
+            if not page.get("pagination", {}).get("next"):
+                break
+            offset += 250
+    return found
+
+
 def main():
     global CONGRESS
     ap = argparse.ArgumentParser()
     ap.add_argument("--source", choices=["auto", "congress", "govinfo"], default="auto")
     ap.add_argument("--only", help="comma list of bill ids to fetch (testing)")
     ap.add_argument("--out", default=OUT)
+    ap.add_argument("--discover-days", type=int, default=21, help="look for new FY bills updated in the last N days")
     args = ap.parse_args()
 
     load_env()
@@ -355,6 +406,20 @@ def main():
 
     flags, cache, rows, no_senate = [], {}, [], []
     only = set(args.only.split(",")) if args.only else None
+    discovered = []
+    if source == "congress" and not only and args.discover_days > 0:
+        try:
+            discovered = discover(cfg, key, args.discover_days)
+        except Exception as e:
+            flags.append(f"Could not check Congress.gov for new appropriations bills ({e}).")
+        for d in discovered:
+            b = next((x for x in cfg["bills"] if x["id"] == d["subject"]), None)
+            side = "senate" if d["type"] in ("s", "sjres") else "house"
+            if b is not None and not b.get(side):
+                b[side] = {"type": d["type"], "number": d["number"]}
+                flags.append(f"Found {label(d)} on Congress.gov and added it as the {side.title()} {b['short']} bill. Add it to config/bills.json to keep it.")
+            else:
+                flags.append(f"New FY{cfg['fiscalYear']} appropriations bill on Congress.gov not placed: {label(d)}, {d['title'][:120]}. Check and add it to config/bills.json.")
     for b in cfg["bills"]:
         if only and b["id"] not in only:
             continue
@@ -406,7 +471,7 @@ def main():
                    "calls": CALLS},
         "deadline": cfg["deadline"], "onTimeStat": cfg["onTimeStat"],
         "steps": [{"key": k, "label": l} for k, l in STEPS],
-        "counts": counts, "bills": rows, "stopgaps": stopgaps, "flags": flags,
+        "counts": counts, "bills": rows, "stopgaps": stopgaps, "flags": flags, "discovered": discovered,
     }
     os.makedirs(os.path.dirname(args.out), exist_ok=True)
     tmp = args.out + ".tmp"
