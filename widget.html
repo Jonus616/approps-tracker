@@ -53,6 +53,7 @@
 #ca-at .now .d a { font-weight: 600; }
 #ca-at .now .pt { color: var(--muted); font-size: 14px; }
 #ca-at .now .pt abbr { text-decoration: none; border: 0; }
+#ca-at .now .la { color: var(--muted); font-size: 13.5px; }
 
 /* Six-step track with an icon in each dot */
 #ca-at .trk-w { position: relative; }
@@ -195,7 +196,8 @@
         }).join(", ");
       }
     }
-    return '<p class="now"><b>' + head + "</b>" + (line ? '<span class="d">' + line + "</span>" : "") + (parties ? '<span class="pt">' + parties + "</span>" : "") + "</p>";
+    return '<p class="now"><b>' + head + "</b>" + (line ? '<span class="d">' + line + "</span>" : "") + (parties ? '<span class="pt">' + parties + "</span>" : "") +
+      (b.latestAction && b.latestAction.date ? '<span class="la">Last action ' + fd(b.latestAction.date) + "</span>" : "") + "</p>";
   }
   function srNote(s) {
     if (s.status === "todo") return "not yet";
