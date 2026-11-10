@@ -1,0 +1,57 @@
+{
+  "_about": "Hand-kept list of the FY2027 bills the tracker follows. The script reads everything else from Congress.gov. Edit this file when a new bill number appears (for example a Senate committee bill or an omnibus). No dates or statuses are typed here except the CRS markup reference and the CR deadline, which Congress.gov does not carry.",
+  "congress": 119,
+  "fiscalYear": 2027,
+  "deadline": {
+    "date": "2026-12-11",
+    "time": "23:59",
+    "tz": "America/New_York",
+    "label": "Current stopgap funding runs out",
+    "law": "P.L. 119-103",
+    "bill": {"type": "hr", "number": 6500},
+    "source": "CRS Report R49353 and the CRS Appropriations Status Table (both say the CR runs through Dec 11, 2026). Hand-edited: change it when a new CR becomes law."
+  },
+  "onTimeStat": {
+    "text": "Congress has not finished all 12 spending bills on time since 1996.",
+    "detail": "Only four times in nearly five decades has every regular spending bill become law before the fiscal year began. The last was fiscal 1997, signed in September 1996.",
+    "source": "Pew Research Center, \"Congress has long struggled to pass spending bills on time\" (Oct 1, 2025). Read Nov 10, 2026.",
+    "sourceUrl": "https://www.pewresearch.org/short-reads/2025/10/01/congress-has-long-struggled-to-pass-spending-bills-on-time"
+  },
+  "bills": [
+    {"id": "ag",    "name": "Agriculture, Rural Development, FDA", "short": "Agriculture-FDA",       "house": {"type": "hr", "number": 8646}, "senate": null},
+    {"id": "cjs",   "name": "Commerce, Justice, Science",           "short": "Commerce-Justice-Science", "house": {"type": "hr", "number": 8845}, "senate": null},
+    {"id": "def",   "name": "Defense",                              "short": "Defense",               "house": {"type": "hr", "number": 9495}, "senate": null},
+    {"id": "ew",    "name": "Energy and Water Development",         "short": "Energy-Water",          "house": {"type": "hr", "number": 9022}, "senate": null},
+    {"id": "fsgg",  "name": "Financial Services and General Government", "short": "Financial Services", "house": {"type": "hr", "number": 8495}, "senate": null},
+    {"id": "dhs",   "name": "Homeland Security",                    "short": "Homeland Security",     "house": {"type": "hr", "number": 9310}, "senate": null},
+    {"id": "int",   "name": "Interior, Environment",                "short": "Interior-Environment",  "house": {"type": "hr", "number": 9171}, "senate": null},
+    {"id": "lhhs",  "name": "Labor, Health and Human Services, Education", "short": "Labor-HHS-Education", "house": {"type": "hr", "number": 9260}, "senate": null},
+    {"id": "leg",   "name": "Legislative Branch",                   "short": "Legislative Branch",    "house": {"type": "hr", "number": 9010}, "senate": null},
+    {"id": "mcva",  "name": "Military Construction, Veterans Affairs", "short": "MilCon-VA",          "house": {"type": "hr", "number": 8469}, "senate": null},
+    {"id": "nss",   "name": "National Security, State Department",  "short": "National Security-State", "house": {"type": "hr", "number": 8595}, "senate": null},
+    {"id": "thud",  "name": "Transportation, Housing and Urban Development", "short": "Transportation-HUD", "house": {"type": "hr", "number": 9170}, "senate": null}
+  ],
+  "stopgaps": [
+    {"id": "cr1", "name": "Continuing Appropriations and Extensions Act, 2027", "bill": {"type": "hr", "number": 6500}, "through": "2026-12-11"},
+    {"id": "cr0", "name": "Continuing Appropriations Act, 2027 (House version)", "bill": {"type": "hr", "number": 9770}, "through": "2026-12-04"}
+  ],
+  "crsMarkups": {
+    "_about": "Congress.gov bill actions do not record subcommittee markups, and they date full committee steps by when the report was filed. These markup dates and votes were read by hand from the public CRS Appropriations Status Table (https://www.congress.gov/crs-appropriations-status-table), FY2027, Last Updated 11/06/2026 2:25 PM, read Nov 10, 2026. Empty Senate columns for every bill.",
+    "asOf": "2026-11-06",
+    "house": {
+      "ag":   {"sub": {"date": "2026-04-23", "vote": "10-7"},       "full": {"date": "2026-04-29", "vote": "35-25"}},
+      "cjs":  {"sub": {"date": "2026-04-30", "vote": "8-6"},        "full": {"date": "2026-05-13", "vote": "32-28"}},
+      "def":  {"sub": {"date": "2026-06-11", "vote": "voice vote"}, "full": {"date": "2026-06-24", "vote": "34-27"}},
+      "ew":   {"sub": {"date": "2026-05-15", "vote": "voice vote"}, "full": {"date": "2026-05-20", "vote": "34-25"}},
+      "fsgg": {"sub": {"date": "2026-04-17", "vote": "9-6"},        "full": {"date": "2026-04-22", "vote": "34-28"}},
+      "dhs":  {"sub": {"date": "2026-06-05", "vote": "voice vote"}, "full": {"date": "2026-06-10", "vote": "34-27"}},
+      "int":  {"sub": {"date": "2026-05-21", "vote": "7-5"},        "full": {"date": "2026-06-03", "vote": "35-27"}},
+      "lhhs": {"sub": {"date": "2026-06-05", "vote": "11-7"},       "full": {"date": "2026-06-09", "vote": "34-28"}},
+      "leg":  {"sub": {"date": "2026-04-30", "vote": "5-4"},        "full": {"date": "2026-05-20", "vote": "34-28"}},
+      "mcva": {"sub": {"date": "2026-04-17", "vote": "voice vote"}, "full": {"date": "2026-04-21", "vote": "58-0"}},
+      "nss":  {"sub": {"date": "2026-04-23", "vote": "8-5"},        "full": {"date": "2026-04-28", "vote": "35-27"}},
+      "thud": {"sub": {"date": "2026-05-21", "vote": "9-7"},        "full": {"date": "2026-06-03", "vote": "34-27"}}
+    },
+    "senate": {}
+  }
+}

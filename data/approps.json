@@ -1,0 +1,1526 @@
+{
+ "lastUpdated": "2026-11-10T20:02:13Z",
+ "fiscalYear": 2027,
+ "congress": 119,
+ "source": {
+  "bills": "Congress.gov API v3",
+  "votes": "House Clerk roll-call XML and senate.gov roll-call XML",
+  "markups": "CRS Appropriations Status Table (subcommittee and committee markup dates, as of 2026-11-06)",
+  "calls": {
+   "congress": 28,
+   "govinfo": 0,
+   "clerk": 6,
+   "senate": 1
+  }
+ },
+ "deadline": {
+  "date": "2026-12-11",
+  "time": "23:59",
+  "tz": "America/New_York",
+  "label": "Current stopgap funding runs out",
+  "law": "P.L. 119-103",
+  "bill": {
+   "type": "hr",
+   "number": 6500
+  },
+  "source": "CRS Report R49353 and the CRS Appropriations Status Table (both say the CR runs through Dec 11, 2026). Hand-edited: change it when a new CR becomes law."
+ },
+ "onTimeStat": {
+  "text": "Congress has not finished all 12 spending bills on time since 1996.",
+  "detail": "Only four times in nearly five decades has every regular spending bill become law before the fiscal year began. The last was fiscal 1997, signed in September 1996.",
+  "source": "Pew Research Center, \"Congress has long struggled to pass spending bills on time\" (Oct 1, 2025). Read Nov 10, 2026.",
+  "sourceUrl": "https://www.pewresearch.org/short-reads/2025/10/01/congress-has-long-struggled-to-pass-spending-bills-on-time"
+ },
+ "steps": [
+  {
+   "key": "sub",
+   "label": "Subcommittee"
+  },
+  {
+   "key": "committee",
+   "label": "Committee"
+  },
+  {
+   "key": "house",
+   "label": "House floor"
+  },
+  {
+   "key": "senate",
+   "label": "Senate floor"
+  },
+  {
+   "key": "final",
+   "label": "Final deal"
+  },
+  {
+   "key": "law",
+   "label": "Signed into law"
+  }
+ ],
+ "counts": {
+  "sub": 12,
+  "committee": 12,
+  "house": 3,
+  "senate": 0,
+  "final": 0,
+  "law": 0
+ },
+ "bills": [
+  {
+   "id": "ag",
+   "name": "Agriculture, Rural Development, FDA",
+   "short": "Agriculture-FDA",
+   "stage": 3,
+   "stageLabel": "House floor",
+   "steps": [
+    {
+     "key": "sub",
+     "label": "Subcommittee",
+     "status": "partial",
+     "house": {
+      "date": "2026-04-23",
+      "vote": "10-7",
+      "source": "CRS status table"
+     },
+     "senate": null
+    },
+    {
+     "key": "committee",
+     "label": "Committee",
+     "status": "partial",
+     "house": {
+      "date": "2026-04-29",
+      "vote": "35-25",
+      "reported": "2026-05-01",
+      "text": "The House Committee on Appropriations reported an original measure, H. Rept. 119-632, by Mr. Harris (MD)."
+     },
+     "senate": null
+    },
+    {
+     "key": "house",
+     "label": "House floor",
+     "status": "done",
+     "date": "2026-06-04",
+     "vote": {
+      "chamber": "House",
+      "roll": 205,
+      "date": "2026-06-04",
+      "question": "On Passage",
+      "result": "Passed",
+      "yea": 213,
+      "nay": 210,
+      "notVoting": 7,
+      "parties": [
+       {
+        "party": "Republican",
+        "yea": 208,
+        "nay": 5
+       },
+       {
+        "party": "Democratic",
+        "yea": 4,
+        "nay": 205
+       },
+       {
+        "party": "Independent",
+        "yea": 1,
+        "nay": 0
+       }
+      ],
+      "source": "https://clerk.house.gov/evs/2026/roll205.xml"
+     }
+    },
+    {
+     "key": "senate",
+     "label": "Senate floor",
+     "status": "todo",
+     "date": null,
+     "vote": null
+    },
+    {
+     "key": "final",
+     "label": "Final deal",
+     "status": "todo",
+     "date": null,
+     "vote": null,
+     "text": null
+    },
+    {
+     "key": "law",
+     "label": "Signed into law",
+     "status": "todo",
+     "date": null,
+     "text": null
+    }
+   ],
+   "latestAction": {
+    "date": "2026-06-08",
+    "text": "Received in the Senate."
+   },
+   "lastVote": {
+    "chamber": "House",
+    "roll": 205,
+    "date": "2026-06-04",
+    "question": "On Passage",
+    "result": "Passed",
+    "yea": 213,
+    "nay": 210,
+    "notVoting": 7,
+    "parties": [
+     {
+      "party": "Republican",
+      "yea": 208,
+      "nay": 5
+     },
+     {
+      "party": "Democratic",
+      "yea": 4,
+      "nay": 205
+     },
+     {
+      "party": "Independent",
+      "yea": 1,
+      "nay": 0
+     }
+    ],
+    "source": "https://clerk.house.gov/evs/2026/roll205.xml",
+    "action": "On passage Passed by the Yeas and Nays: 213 - 210 (Roll no. 205)."
+   },
+   "bills": [
+    {
+     "chamber": "House",
+     "label": "H.R. 8646",
+     "url": "https://www.congress.gov/bill/119th-congress/house-bill/8646",
+     "title": "Agriculture, Rural Development, Food and Drug Administration, and Related Agency Appropriations Act, 2027",
+     "updated": "2026-09-19T23:30:48Z",
+     "laws": [],
+     "found": true
+    }
+   ]
+  },
+  {
+   "id": "cjs",
+   "name": "Commerce, Justice, Science",
+   "short": "Commerce-Justice-Science",
+   "stage": 2,
+   "stageLabel": "Committee",
+   "steps": [
+    {
+     "key": "sub",
+     "label": "Subcommittee",
+     "status": "partial",
+     "house": {
+      "date": "2026-04-30",
+      "vote": "8-6",
+      "source": "CRS status table"
+     },
+     "senate": null
+    },
+    {
+     "key": "committee",
+     "label": "Committee",
+     "status": "partial",
+     "house": {
+      "date": "2026-05-13",
+      "vote": "32-28",
+      "reported": "2026-05-15",
+      "text": "The House Committee on Appropriations reported an original measure, H. Rept. 119-652, by Mr. Rogers (KY)."
+     },
+     "senate": null
+    },
+    {
+     "key": "house",
+     "label": "House floor",
+     "status": "todo",
+     "date": null,
+     "vote": null
+    },
+    {
+     "key": "senate",
+     "label": "Senate floor",
+     "status": "todo",
+     "date": null,
+     "vote": null
+    },
+    {
+     "key": "final",
+     "label": "Final deal",
+     "status": "todo",
+     "date": null,
+     "vote": null,
+     "text": null
+    },
+    {
+     "key": "law",
+     "label": "Signed into law",
+     "status": "todo",
+     "date": null,
+     "text": null
+    }
+   ],
+   "latestAction": {
+    "date": "2026-05-15",
+    "text": "Placed on the Union Calendar, Calendar No. 567."
+   },
+   "lastVote": {
+    "chamber": "House Appropriations Committee",
+    "date": "2026-05-13",
+    "tally": "32-28",
+    "question": "Full committee markup",
+    "source": "CRS status table"
+   },
+   "bills": [
+    {
+     "chamber": "House",
+     "label": "H.R. 8845",
+     "url": "https://www.congress.gov/bill/119th-congress/house-bill/8845",
+     "title": "Commerce, Justice, Science, and Related Agencies Appropriations Act, 2027",
+     "updated": "2026-11-05T17:04:18Z",
+     "laws": [],
+     "found": true
+    }
+   ]
+  },
+  {
+   "id": "def",
+   "name": "Defense",
+   "short": "Defense",
+   "stage": 2,
+   "stageLabel": "Committee",
+   "steps": [
+    {
+     "key": "sub",
+     "label": "Subcommittee",
+     "status": "partial",
+     "house": {
+      "date": "2026-06-11",
+      "vote": "voice vote",
+      "source": "CRS status table"
+     },
+     "senate": null
+    },
+    {
+     "key": "committee",
+     "label": "Committee",
+     "status": "partial",
+     "house": {
+      "date": "2026-06-24",
+      "vote": "34-27",
+      "reported": "2026-06-26",
+      "text": "The House Committee on Appropriations reported an original measure, H. Rept. 119-715, by Mr. Calvert."
+     },
+     "senate": null
+    },
+    {
+     "key": "house",
+     "label": "House floor",
+     "status": "todo",
+     "date": null,
+     "vote": null
+    },
+    {
+     "key": "senate",
+     "label": "Senate floor",
+     "status": "todo",
+     "date": null,
+     "vote": null
+    },
+    {
+     "key": "final",
+     "label": "Final deal",
+     "status": "todo",
+     "date": null,
+     "vote": null,
+     "text": null
+    },
+    {
+     "key": "law",
+     "label": "Signed into law",
+     "status": "todo",
+     "date": null,
+     "text": null
+    }
+   ],
+   "latestAction": {
+    "date": "2026-06-26",
+    "text": "Placed on the Union Calendar, Calendar No. 621."
+   },
+   "lastVote": {
+    "chamber": "House Appropriations Committee",
+    "date": "2026-06-24",
+    "tally": "34-27",
+    "question": "Full committee markup",
+    "source": "CRS status table"
+   },
+   "bills": [
+    {
+     "chamber": "House",
+     "label": "H.R. 9495",
+     "url": "https://www.congress.gov/bill/119th-congress/house-bill/9495",
+     "title": "Department of Defense Appropriations Act, 2027",
+     "updated": "2026-08-13T13:28:46Z",
+     "laws": [],
+     "found": true
+    }
+   ]
+  },
+  {
+   "id": "ew",
+   "name": "Energy and Water Development",
+   "short": "Energy-Water",
+   "stage": 2,
+   "stageLabel": "Committee",
+   "steps": [
+    {
+     "key": "sub",
+     "label": "Subcommittee",
+     "status": "partial",
+     "house": {
+      "date": "2026-05-15",
+      "vote": "voice vote",
+      "source": "CRS status table"
+     },
+     "senate": null
+    },
+    {
+     "key": "committee",
+     "label": "Committee",
+     "status": "partial",
+     "house": {
+      "date": "2026-05-20",
+      "vote": "34-25",
+      "reported": "2026-05-22",
+      "text": "The House Committee on Appropriations reported an original measure, H. Rept. 119-667, by Mr. Fleischmann."
+     },
+     "senate": null
+    },
+    {
+     "key": "house",
+     "label": "House floor",
+     "status": "todo",
+     "date": null,
+     "vote": null
+    },
+    {
+     "key": "senate",
+     "label": "Senate floor",
+     "status": "todo",
+     "date": null,
+     "vote": null
+    },
+    {
+     "key": "final",
+     "label": "Final deal",
+     "status": "todo",
+     "date": null,
+     "vote": null,
+     "text": null
+    },
+    {
+     "key": "law",
+     "label": "Signed into law",
+     "status": "todo",
+     "date": null,
+     "text": null
+    }
+   ],
+   "latestAction": {
+    "date": "2026-06-23",
+    "text": "Rules Committee Resolution H. Res. 1377 Reported to House. Rule provides for consideration of H.R. 1181, H.R. 9022, H.R. 8595 and H.R. 9237. The resolution provides for consideration of H.R. 1181 and H.R. 9237 under a closed rule and H.R. 9022 and H.R. 8595 under a structured rule. The resolution provides for one hour of general debate and one motion to recommit on each bill."
+   },
+   "lastVote": {
+    "chamber": "House Appropriations Committee",
+    "date": "2026-05-20",
+    "tally": "34-25",
+    "question": "Full committee markup",
+    "source": "CRS status table"
+   },
+   "bills": [
+    {
+     "chamber": "House",
+     "label": "H.R. 9022",
+     "url": "https://www.congress.gov/bill/119th-congress/house-bill/9022",
+     "title": "Energy and Water Development and Related Agencies Appropriations Act, 2027",
+     "updated": "2026-07-23T23:06:26Z",
+     "laws": [],
+     "found": true
+    }
+   ]
+  },
+  {
+   "id": "fsgg",
+   "name": "Financial Services and General Government",
+   "short": "Financial Services",
+   "stage": 2,
+   "stageLabel": "Committee",
+   "steps": [
+    {
+     "key": "sub",
+     "label": "Subcommittee",
+     "status": "partial",
+     "house": {
+      "date": "2026-04-17",
+      "vote": "9-6",
+      "source": "CRS status table"
+     },
+     "senate": null
+    },
+    {
+     "key": "committee",
+     "label": "Committee",
+     "status": "partial",
+     "house": {
+      "date": "2026-04-22",
+      "vote": "34-28",
+      "reported": "2026-04-24",
+      "text": "The House Committee on Appropriations reported an original measure, H. Rept. 119-623, by Mr. Joyce (OH)."
+     },
+     "senate": null
+    },
+    {
+     "key": "house",
+     "label": "House floor",
+     "status": "todo",
+     "date": null,
+     "vote": null
+    },
+    {
+     "key": "senate",
+     "label": "Senate floor",
+     "status": "todo",
+     "date": null,
+     "vote": null
+    },
+    {
+     "key": "final",
+     "label": "Final deal",
+     "status": "todo",
+     "date": null,
+     "vote": null,
+     "text": null
+    },
+    {
+     "key": "law",
+     "label": "Signed into law",
+     "status": "todo",
+     "date": null,
+     "text": null
+    }
+   ],
+   "latestAction": {
+    "date": "2026-04-24",
+    "text": "Placed on the Union Calendar, Calendar No. 540."
+   },
+   "lastVote": {
+    "chamber": "House Appropriations Committee",
+    "date": "2026-04-22",
+    "tally": "34-28",
+    "question": "Full committee markup",
+    "source": "CRS status table"
+   },
+   "bills": [
+    {
+     "chamber": "House",
+     "label": "H.R. 8495",
+     "url": "https://www.congress.gov/bill/119th-congress/house-bill/8495",
+     "title": "Financial Services and General Government Appropriations Act, 2027",
+     "updated": "2026-11-05T20:24:06Z",
+     "laws": [],
+     "found": true
+    }
+   ]
+  },
+  {
+   "id": "dhs",
+   "name": "Homeland Security",
+   "short": "Homeland Security",
+   "stage": 2,
+   "stageLabel": "Committee",
+   "steps": [
+    {
+     "key": "sub",
+     "label": "Subcommittee",
+     "status": "partial",
+     "house": {
+      "date": "2026-06-05",
+      "vote": "voice vote",
+      "source": "CRS status table"
+     },
+     "senate": null
+    },
+    {
+     "key": "committee",
+     "label": "Committee",
+     "status": "partial",
+     "house": {
+      "date": "2026-06-10",
+      "vote": "34-27",
+      "reported": "2026-06-12",
+      "text": "The House Committee on Appropriations reported an original measure, H. Rept. 119-697, by Mr. Amodei (NV)."
+     },
+     "senate": null
+    },
+    {
+     "key": "house",
+     "label": "House floor",
+     "status": "todo",
+     "date": null,
+     "vote": null
+    },
+    {
+     "key": "senate",
+     "label": "Senate floor",
+     "status": "todo",
+     "date": null,
+     "vote": null
+    },
+    {
+     "key": "final",
+     "label": "Final deal",
+     "status": "todo",
+     "date": null,
+     "vote": null,
+     "text": null
+    },
+    {
+     "key": "law",
+     "label": "Signed into law",
+     "status": "todo",
+     "date": null,
+     "text": null
+    }
+   ],
+   "latestAction": {
+    "date": "2026-06-12",
+    "text": "Placed on the Union Calendar, Calendar No. 605."
+   },
+   "lastVote": {
+    "chamber": "House Appropriations Committee",
+    "date": "2026-06-10",
+    "tally": "34-27",
+    "question": "Full committee markup",
+    "source": "CRS status table"
+   },
+   "bills": [
+    {
+     "chamber": "House",
+     "label": "H.R. 9310",
+     "url": "https://www.congress.gov/bill/119th-congress/house-bill/9310",
+     "title": "Department of Homeland Security Appropriations Act, 2027",
+     "updated": "2026-08-31T19:32:42Z",
+     "laws": [],
+     "found": true
+    }
+   ]
+  },
+  {
+   "id": "int",
+   "name": "Interior, Environment",
+   "short": "Interior-Environment",
+   "stage": 2,
+   "stageLabel": "Committee",
+   "steps": [
+    {
+     "key": "sub",
+     "label": "Subcommittee",
+     "status": "partial",
+     "house": {
+      "date": "2026-05-21",
+      "vote": "7-5",
+      "source": "CRS status table"
+     },
+     "senate": null
+    },
+    {
+     "key": "committee",
+     "label": "Committee",
+     "status": "partial",
+     "house": {
+      "date": "2026-06-03",
+      "vote": "35-27",
+      "reported": "2026-06-05",
+      "text": "The House Committee on Appropriations reported an original measure, H. Rept. 119-687, by Mr. Simpson."
+     },
+     "senate": null
+    },
+    {
+     "key": "house",
+     "label": "House floor",
+     "status": "todo",
+     "date": null,
+     "vote": null
+    },
+    {
+     "key": "senate",
+     "label": "Senate floor",
+     "status": "todo",
+     "date": null,
+     "vote": null
+    },
+    {
+     "key": "final",
+     "label": "Final deal",
+     "status": "todo",
+     "date": null,
+     "vote": null,
+     "text": null
+    },
+    {
+     "key": "law",
+     "label": "Signed into law",
+     "status": "todo",
+     "date": null,
+     "text": null
+    }
+   ],
+   "latestAction": {
+    "date": "2026-06-05",
+    "text": "Placed on the Union Calendar, Calendar No. 599."
+   },
+   "lastVote": {
+    "chamber": "House Appropriations Committee",
+    "date": "2026-06-03",
+    "tally": "35-27",
+    "question": "Full committee markup",
+    "source": "CRS status table"
+   },
+   "bills": [
+    {
+     "chamber": "House",
+     "label": "H.R. 9171",
+     "url": "https://www.congress.gov/bill/119th-congress/house-bill/9171",
+     "title": "Department of the Interior, Environment, and Related Agencies Appropriations Act, 2027",
+     "updated": "2026-10-02T17:57:03Z",
+     "laws": [],
+     "found": true
+    }
+   ]
+  },
+  {
+   "id": "lhhs",
+   "name": "Labor, Health and Human Services, Education",
+   "short": "Labor-HHS-Education",
+   "stage": 2,
+   "stageLabel": "Committee",
+   "steps": [
+    {
+     "key": "sub",
+     "label": "Subcommittee",
+     "status": "partial",
+     "house": {
+      "date": "2026-06-05",
+      "vote": "11-7",
+      "source": "CRS status table"
+     },
+     "senate": null
+    },
+    {
+     "key": "committee",
+     "label": "Committee",
+     "status": "partial",
+     "house": {
+      "date": "2026-06-09",
+      "vote": "34-28",
+      "reported": "2026-06-11",
+      "text": "The House Committee on Appropriations reported an original measure, H. Rept. 119-696, by Mr. Aderholt."
+     },
+     "senate": null
+    },
+    {
+     "key": "house",
+     "label": "House floor",
+     "status": "todo",
+     "date": null,
+     "vote": null
+    },
+    {
+     "key": "senate",
+     "label": "Senate floor",
+     "status": "todo",
+     "date": null,
+     "vote": null
+    },
+    {
+     "key": "final",
+     "label": "Final deal",
+     "status": "todo",
+     "date": null,
+     "vote": null,
+     "text": null
+    },
+    {
+     "key": "law",
+     "label": "Signed into law",
+     "status": "todo",
+     "date": null,
+     "text": null
+    }
+   ],
+   "latestAction": {
+    "date": "2026-06-11",
+    "text": "Placed on the Union Calendar, Calendar No. 604."
+   },
+   "lastVote": {
+    "chamber": "House Appropriations Committee",
+    "date": "2026-06-09",
+    "tally": "34-28",
+    "question": "Full committee markup",
+    "source": "CRS status table"
+   },
+   "bills": [
+    {
+     "chamber": "House",
+     "label": "H.R. 9260",
+     "url": "https://www.congress.gov/bill/119th-congress/house-bill/9260",
+     "title": "Departments of Labor, Health and Human Services, and Education, and Related Agencies Appropriations Act, 2027",
+     "updated": "2026-09-22T18:41:49Z",
+     "laws": [],
+     "found": true
+    }
+   ]
+  },
+  {
+   "id": "leg",
+   "name": "Legislative Branch",
+   "short": "Legislative Branch",
+   "stage": 2,
+   "stageLabel": "Committee",
+   "steps": [
+    {
+     "key": "sub",
+     "label": "Subcommittee",
+     "status": "partial",
+     "house": {
+      "date": "2026-04-30",
+      "vote": "5-4",
+      "source": "CRS status table"
+     },
+     "senate": null
+    },
+    {
+     "key": "committee",
+     "label": "Committee",
+     "status": "partial",
+     "house": {
+      "date": "2026-05-20",
+      "vote": "34-28",
+      "reported": "2026-05-22",
+      "text": "The House Committee on Appropriations reported an original measure, H. Rept. 119-666, by Mr. Valadao."
+     },
+     "senate": null
+    },
+    {
+     "key": "house",
+     "label": "House floor",
+     "status": "todo",
+     "date": null,
+     "vote": null
+    },
+    {
+     "key": "senate",
+     "label": "Senate floor",
+     "status": "todo",
+     "date": null,
+     "vote": null
+    },
+    {
+     "key": "final",
+     "label": "Final deal",
+     "status": "todo",
+     "date": null,
+     "vote": null,
+     "text": null
+    },
+    {
+     "key": "law",
+     "label": "Signed into law",
+     "status": "todo",
+     "date": null,
+     "text": null
+    }
+   ],
+   "latestAction": {
+    "date": "2026-05-22",
+    "text": "Placed on the Union Calendar, Calendar No. 580."
+   },
+   "lastVote": {
+    "chamber": "House Appropriations Committee",
+    "date": "2026-05-20",
+    "tally": "34-28",
+    "question": "Full committee markup",
+    "source": "CRS status table"
+   },
+   "bills": [
+    {
+     "chamber": "House",
+     "label": "H.R. 9010",
+     "url": "https://www.congress.gov/bill/119th-congress/house-bill/9010",
+     "title": "Making appropriations for the Legislative Branch for the fiscal year ending September 30, 2027, and for other purposes.",
+     "updated": "2026-09-14T18:22:43Z",
+     "laws": [],
+     "found": true
+    }
+   ]
+  },
+  {
+   "id": "mcva",
+   "name": "Military Construction, Veterans Affairs",
+   "short": "MilCon-VA",
+   "stage": 3,
+   "stageLabel": "House floor",
+   "steps": [
+    {
+     "key": "sub",
+     "label": "Subcommittee",
+     "status": "partial",
+     "house": {
+      "date": "2026-04-17",
+      "vote": "voice vote",
+      "source": "CRS status table"
+     },
+     "senate": null
+    },
+    {
+     "key": "committee",
+     "label": "Committee",
+     "status": "partial",
+     "house": {
+      "date": "2026-04-21",
+      "vote": "58-0",
+      "reported": "2026-04-23",
+      "text": "The House Committee on Appropriations reported an original measure, H. Rept. 119-622, by Mr. Carter (TX)."
+     },
+     "senate": null
+    },
+    {
+     "key": "house",
+     "label": "House floor",
+     "status": "done",
+     "date": "2026-05-15",
+     "vote": {
+      "chamber": "House",
+      "roll": 175,
+      "date": "2026-05-15",
+      "question": "On Passage",
+      "result": "Passed",
+      "yea": 400,
+      "nay": 15,
+      "notVoting": 15,
+      "parties": [
+       {
+        "party": "Republican",
+        "yea": 210,
+        "nay": 0
+       },
+       {
+        "party": "Democratic",
+        "yea": 189,
+        "nay": 15
+       },
+       {
+        "party": "Independent",
+        "yea": 1,
+        "nay": 0
+       }
+      ],
+      "source": "https://clerk.house.gov/evs/2026/roll175.xml"
+     }
+    },
+    {
+     "key": "senate",
+     "label": "Senate floor",
+     "status": "todo",
+     "date": null,
+     "vote": null
+    },
+    {
+     "key": "final",
+     "label": "Final deal",
+     "status": "todo",
+     "date": null,
+     "vote": null,
+     "text": null
+    },
+    {
+     "key": "law",
+     "label": "Signed into law",
+     "status": "todo",
+     "date": null,
+     "text": null
+    }
+   ],
+   "latestAction": {
+    "date": "2026-07-14",
+    "text": "Read the second time. Placed on Senate Legislative Calendar under General Orders. Calendar No. 455."
+   },
+   "lastVote": {
+    "chamber": "House",
+    "roll": 175,
+    "date": "2026-05-15",
+    "question": "On Passage",
+    "result": "Passed",
+    "yea": 400,
+    "nay": 15,
+    "notVoting": 15,
+    "parties": [
+     {
+      "party": "Republican",
+      "yea": 210,
+      "nay": 0
+     },
+     {
+      "party": "Democratic",
+      "yea": 189,
+      "nay": 15
+     },
+     {
+      "party": "Independent",
+      "yea": 1,
+      "nay": 0
+     }
+    ],
+    "source": "https://clerk.house.gov/evs/2026/roll175.xml",
+    "action": "On passage Passed by the Yeas and Nays: 400 - 15 (Roll no. 175)."
+   },
+   "bills": [
+    {
+     "chamber": "House",
+     "label": "H.R. 8469",
+     "url": "https://www.congress.gov/bill/119th-congress/house-bill/8469",
+     "title": "Making appropriations for military construction, the Department of Veterans Affairs, and related agencies for the fiscal year ending September 30, 2027, and for other purposes.",
+     "updated": "2026-09-19T23:39:37Z",
+     "laws": [],
+     "found": true
+    }
+   ]
+  },
+  {
+   "id": "nss",
+   "name": "National Security, State Department",
+   "short": "National Security-State",
+   "stage": 3,
+   "stageLabel": "House floor",
+   "steps": [
+    {
+     "key": "sub",
+     "label": "Subcommittee",
+     "status": "partial",
+     "house": {
+      "date": "2026-04-23",
+      "vote": "8-5",
+      "source": "CRS status table"
+     },
+     "senate": null
+    },
+    {
+     "key": "committee",
+     "label": "Committee",
+     "status": "partial",
+     "house": {
+      "date": "2026-04-28",
+      "vote": "35-27",
+      "reported": "2026-04-30",
+      "text": "The House Committee on Appropriations reported an original measure, H. Rept. 119-631, by Mr. Diaz-Balart."
+     },
+     "senate": null
+    },
+    {
+     "key": "house",
+     "label": "House floor",
+     "status": "done",
+     "date": "2026-07-15",
+     "vote": {
+      "chamber": "House",
+      "roll": 247,
+      "date": "2026-07-15",
+      "question": "On Passage",
+      "result": "Passed",
+      "yea": 217,
+      "nay": 209,
+      "notVoting": 5,
+      "parties": [
+       {
+        "party": "Republican",
+        "yea": 215,
+        "nay": 1
+       },
+       {
+        "party": "Democratic",
+        "yea": 1,
+        "nay": 208
+       },
+       {
+        "party": "Independent",
+        "yea": 1,
+        "nay": 0
+       }
+      ],
+      "source": "https://clerk.house.gov/evs/2026/roll247.xml"
+     }
+    },
+    {
+     "key": "senate",
+     "label": "Senate floor",
+     "status": "todo",
+     "date": null,
+     "vote": null
+    },
+    {
+     "key": "final",
+     "label": "Final deal",
+     "status": "todo",
+     "date": null,
+     "vote": null,
+     "text": null
+    },
+    {
+     "key": "law",
+     "label": "Signed into law",
+     "status": "todo",
+     "date": null,
+     "text": null
+    }
+   ],
+   "latestAction": {
+    "date": "2026-07-29",
+    "text": "Received in the Senate."
+   },
+   "lastVote": {
+    "chamber": "House",
+    "roll": 247,
+    "date": "2026-07-15",
+    "question": "On Passage",
+    "result": "Passed",
+    "yea": 217,
+    "nay": 209,
+    "notVoting": 5,
+    "parties": [
+     {
+      "party": "Republican",
+      "yea": 215,
+      "nay": 1
+     },
+     {
+      "party": "Democratic",
+      "yea": 1,
+      "nay": 208
+     },
+     {
+      "party": "Independent",
+      "yea": 1,
+      "nay": 0
+     }
+    ],
+    "source": "https://clerk.house.gov/evs/2026/roll247.xml",
+    "action": "On passage Passed by the Yeas and Nays: 217 - 209 (Roll no. 247)."
+   },
+   "bills": [
+    {
+     "chamber": "House",
+     "label": "H.R. 8595",
+     "url": "https://www.congress.gov/bill/119th-congress/house-bill/8595",
+     "title": "Making appropriations for national security, Department of State, and related programs for the fiscal year ending September 30, 2027, and for other purposes.",
+     "updated": "2026-09-19T23:28:54Z",
+     "laws": [],
+     "found": true
+    }
+   ]
+  },
+  {
+   "id": "thud",
+   "name": "Transportation, Housing and Urban Development",
+   "short": "Transportation-HUD",
+   "stage": 2,
+   "stageLabel": "Committee",
+   "steps": [
+    {
+     "key": "sub",
+     "label": "Subcommittee",
+     "status": "partial",
+     "house": {
+      "date": "2026-05-21",
+      "vote": "9-7",
+      "source": "CRS status table"
+     },
+     "senate": null
+    },
+    {
+     "key": "committee",
+     "label": "Committee",
+     "status": "partial",
+     "house": {
+      "date": "2026-06-03",
+      "vote": "34-27",
+      "reported": "2026-06-05",
+      "text": "The House Committee on Appropriations reported an original measure, H. Rept. 119-686, by Mr. Womack."
+     },
+     "senate": null
+    },
+    {
+     "key": "house",
+     "label": "House floor",
+     "status": "todo",
+     "date": null,
+     "vote": null
+    },
+    {
+     "key": "senate",
+     "label": "Senate floor",
+     "status": "todo",
+     "date": null,
+     "vote": null
+    },
+    {
+     "key": "final",
+     "label": "Final deal",
+     "status": "todo",
+     "date": null,
+     "vote": null,
+     "text": null
+    },
+    {
+     "key": "law",
+     "label": "Signed into law",
+     "status": "todo",
+     "date": null,
+     "text": null
+    }
+   ],
+   "latestAction": {
+    "date": "2026-06-05",
+    "text": "Placed on the Union Calendar, Calendar No. 598."
+   },
+   "lastVote": {
+    "chamber": "House Appropriations Committee",
+    "date": "2026-06-03",
+    "tally": "34-27",
+    "question": "Full committee markup",
+    "source": "CRS status table"
+   },
+   "bills": [
+    {
+     "chamber": "House",
+     "label": "H.R. 9170",
+     "url": "https://www.congress.gov/bill/119th-congress/house-bill/9170",
+     "title": "Transportation, Housing and Urban Development, and Related Agencies Appropriations Act, 2027",
+     "updated": "2026-11-05T15:41:22Z",
+     "laws": [],
+     "found": true
+    }
+   ]
+  }
+ ],
+ "stopgaps": [
+  {
+   "id": "cr1",
+   "name": "Continuing Appropriations and Extensions Act, 2027",
+   "short": "Continuing Appropriations and Extensions Act, 2027",
+   "stage": 6,
+   "stageLabel": "Signed into law",
+   "steps": [
+    {
+     "key": "sub",
+     "label": "Subcommittee",
+     "status": "todo",
+     "house": null,
+     "senate": null
+    },
+    {
+     "key": "committee",
+     "label": "Committee",
+     "status": "todo",
+     "house": null,
+     "senate": null
+    },
+    {
+     "key": "house",
+     "label": "House floor",
+     "status": "done",
+     "date": "2026-01-12",
+     "vote": {
+      "chamber": "House",
+      "roll": 14,
+      "date": "2026-01-12",
+      "question": "On Motion to Suspend the Rules and Pass, as Amended",
+      "result": "Passed",
+      "yea": 340,
+      "nay": 54,
+      "notVoting": 37,
+      "parties": [
+       {
+        "party": "Republican",
+        "yea": 149,
+        "nay": 43
+       },
+       {
+        "party": "Democratic",
+        "yea": 191,
+        "nay": 11
+       },
+       {
+        "party": "Independent",
+        "yea": 0,
+        "nay": 0
+       }
+      ],
+      "source": "https://clerk.house.gov/evs/2026/roll014.xml"
+     }
+    },
+    {
+     "key": "senate",
+     "label": "Senate floor",
+     "status": "done",
+     "date": "2026-08-08",
+     "vote": {
+      "chamber": "Senate",
+      "roll": 228,
+      "date": "2026-08-08",
+      "question": "On Passage of the Bill H.R. 6500",
+      "result": "Bill Passed",
+      "yea": 90,
+      "nay": 6,
+      "notVoting": 3,
+      "parties": [
+       {
+        "party": "Democrats",
+        "yea": 42,
+        "nay": 3
+       },
+       {
+        "party": "Republicans",
+        "yea": 47,
+        "nay": 2
+       },
+       {
+        "party": "Independents",
+        "yea": 1,
+        "nay": 1
+       }
+      ],
+      "source": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1192/vote_119_2_00228.xml"
+     }
+    },
+    {
+     "key": "final",
+     "label": "Final deal",
+     "status": "done",
+     "date": "2026-09-01",
+     "vote": {
+      "chamber": "House",
+      "roll": 286,
+      "date": "2026-09-01",
+      "question": "On Motion to Suspend the Rules and Concur in the Senate Amendments",
+      "result": "Passed",
+      "yea": 370,
+      "nay": 48,
+      "notVoting": 14,
+      "parties": [
+       {
+        "party": "Republican",
+        "yea": 193,
+        "nay": 19
+       },
+       {
+        "party": "Democratic",
+        "yea": 176,
+        "nay": 29
+       },
+       {
+        "party": "Independent",
+        "yea": 1,
+        "nay": 0
+       }
+      ],
+      "source": "https://clerk.house.gov/evs/2026/roll286.xml"
+     },
+     "text": "On motion that the House suspend the rules and agree to the Senate amendments Agreed to by the Yeas and Nays: (2/3 required): 370 - 48 (Roll no. 286). (consideration: CR H5387; text: CR H5377-5383)"
+    },
+    {
+     "key": "law",
+     "label": "Signed into law",
+     "status": "done",
+     "date": "2026-09-02",
+     "text": "Became Public Law No: 119-103."
+    }
+   ],
+   "latestAction": {
+    "date": "2026-09-02",
+    "text": "Became Public Law No: 119-103."
+   },
+   "lastVote": {
+    "chamber": "House",
+    "roll": 286,
+    "date": "2026-09-01",
+    "question": "On Motion to Suspend the Rules and Concur in the Senate Amendments",
+    "result": "Passed",
+    "yea": 370,
+    "nay": 48,
+    "notVoting": 14,
+    "parties": [
+     {
+      "party": "Republican",
+      "yea": 193,
+      "nay": 19
+     },
+     {
+      "party": "Democratic",
+      "yea": 176,
+      "nay": 29
+     },
+     {
+      "party": "Independent",
+      "yea": 1,
+      "nay": 0
+     }
+    ],
+    "source": "https://clerk.house.gov/evs/2026/roll286.xml",
+    "action": "On motion that the House suspend the rules and agree to the Senate amendments Agreed to by the Yeas and Nays: (2/3 required): 370 - 48 (Roll no. 286). (consideration: CR H5387; text: CR H5377-5383)"
+   },
+   "bills": [
+    {
+     "chamber": "House",
+     "label": "H.R. 6500",
+     "url": "https://www.congress.gov/bill/119th-congress/house-bill/6500",
+     "title": "Continuing Appropriations and Extensions Act, 2027",
+     "updated": "2026-10-16T15:52:27Z",
+     "laws": [
+      "Public Law 119-103"
+     ],
+     "found": true
+    }
+   ],
+   "through": "2026-12-11",
+   "laws": [
+    "Public Law 119-103"
+   ]
+  },
+  {
+   "id": "cr0",
+   "name": "Continuing Appropriations Act, 2027 (House version)",
+   "short": "Continuing Appropriations Act, 2027 (House version)",
+   "stage": 3,
+   "stageLabel": "House floor",
+   "steps": [
+    {
+     "key": "sub",
+     "label": "Subcommittee",
+     "status": "todo",
+     "house": null,
+     "senate": null
+    },
+    {
+     "key": "committee",
+     "label": "Committee",
+     "status": "todo",
+     "house": null,
+     "senate": null
+    },
+    {
+     "key": "house",
+     "label": "House floor",
+     "status": "done",
+     "date": "2026-07-21",
+     "vote": {
+      "chamber": "House",
+      "roll": 272,
+      "date": "2026-07-21",
+      "question": "On Passage",
+      "result": "Passed",
+      "yea": 220,
+      "nay": 205,
+      "notVoting": 6,
+      "parties": [
+       {
+        "party": "Republican",
+        "yea": 213,
+        "nay": 1
+       },
+       {
+        "party": "Democratic",
+        "yea": 6,
+        "nay": 204
+       },
+       {
+        "party": "Independent",
+        "yea": 1,
+        "nay": 0
+       }
+      ],
+      "source": "https://clerk.house.gov/evs/2026/roll272.xml"
+     }
+    },
+    {
+     "key": "senate",
+     "label": "Senate floor",
+     "status": "todo",
+     "date": null,
+     "vote": null
+    },
+    {
+     "key": "final",
+     "label": "Final deal",
+     "status": "todo",
+     "date": null,
+     "vote": null,
+     "text": null
+    },
+    {
+     "key": "law",
+     "label": "Signed into law",
+     "status": "todo",
+     "date": null,
+     "text": null
+    }
+   ],
+   "latestAction": {
+    "date": "2026-07-22",
+    "text": "Received in the Senate."
+   },
+   "lastVote": {
+    "chamber": "House",
+    "roll": 272,
+    "date": "2026-07-21",
+    "question": "On Passage",
+    "result": "Passed",
+    "yea": 220,
+    "nay": 205,
+    "notVoting": 6,
+    "parties": [
+     {
+      "party": "Republican",
+      "yea": 213,
+      "nay": 1
+     },
+     {
+      "party": "Democratic",
+      "yea": 6,
+      "nay": 204
+     },
+     {
+      "party": "Independent",
+      "yea": 1,
+      "nay": 0
+     }
+    ],
+    "source": "https://clerk.house.gov/evs/2026/roll272.xml",
+    "action": "On passage Passed by the Yeas and Nays: 220 - 205 (Roll no. 272). (text: CR H4731-4733)"
+   },
+   "bills": [
+    {
+     "chamber": "House",
+     "label": "H.R. 9770",
+     "url": "https://www.congress.gov/bill/119th-congress/house-bill/9770",
+     "title": "Continuing Appropriations Act, 2027",
+     "updated": "2026-09-08T19:31:27Z",
+     "laws": [],
+     "found": true
+    }
+   ],
+   "through": "2026-12-04",
+   "laws": []
+  }
+ ],
+ "flags": [
+  "No Senate bill numbers yet for any of the 12 bills (none in Congress.gov records or the CRS table). Add them to config/bills.json when the Senate committee reports."
+ ]
+}
