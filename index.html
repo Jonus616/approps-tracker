@@ -622,35 +622,20 @@ background: var(--shade_white_color);
 #ca-at .sr { position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
 #ca-at svg.ic { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2.1; stroke-linecap: round; stroke-linejoin: round; display: block; }
 
-/* Sort buttons and the "what the steps mean" panel */
+/* Sort buttons */
 #ca-at .bar { display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: center; justify-content: space-between; margin-bottom: 12px; }
 #ca-at .chips { display: flex; gap: 8px; flex-wrap: wrap; }
 #ca-at button.ca-btn { all: unset; box-sizing: border-box; display: inline-flex; align-items: center; justify-content: center; width: auto; font-family: inherit; font-size: 15px; font-weight: 600; line-height: 1; min-height: 44px; padding: 0 16px; border-radius: 999px; border: 1.5px solid var(--line); background: var(--card); color: var(--fg); cursor: pointer; }
 #ca-at button.ca-btn[aria-pressed="true"] { background: var(--chip-on); color: var(--chip-on-fg); border-color: var(--chip-on); }
-#ca-at details.explain { margin: 0 0 12px; background: var(--card); border: 1px solid var(--line); border-radius: calc(var(--radius) - 4px); padding: 0 14px; }
-#ca-at[data-look="b"] details.explain { border-width: 1px 0; border-radius: 0; padding: 0; }
-#ca-at .ex { display: grid; gap: 10px; padding: 2px 0 14px; }
-@container (min-width: 640px) { #ca-at .ex { grid-template-columns: 1fr 1fr; gap: 12px 24px; } }
-#ca-at .ex li { display: grid; grid-template-columns: 34px 1fr; gap: 10px; align-items: start; font-size: 15px; }
-#ca-at .ex .badge { width: 34px; height: 34px; border-radius: 50%; background: var(--done); color: var(--done-fg); display: grid; place-items: center; }
-#ca-at .ex b { display: block; }
-#ca-at .states { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 14px; color: var(--muted); padding: 10px 0 14px; border-top: 1px solid var(--line); }
-#ca-at .states span { display: inline-flex; gap: 6px; align-items: center; }
-#ca-at .states i { width: 16px; height: 16px; border-radius: 50%; border: 2.5px solid var(--todo); display: inline-block; background: var(--bg); }
-#ca-at .states i.done { background: var(--done); border-color: var(--done); }
-#ca-at .states i.partial { background: var(--partial-bg); border-color: var(--ring); }
-#ca-at[data-look="b"] .states i { border-radius: 2px; }
-#ca-at[data-look="b"] .states i.partial { background: repeating-linear-gradient(135deg, var(--done) 0 3px, var(--todo) 3px 6px); border: 0; }
-
 /* Step header: stays under the site's menu bar while you scroll the list */
 #ca-at .cols { position: sticky; top: var(--ca-top); z-index: 5; display: grid; grid-template-columns: 1fr; padding: 8px 31px 8px; margin: 0 -16px 8px; background: var(--bg); border-bottom: 1px solid var(--line-strong); box-shadow: 0 6px 10px -8px rgba(0,0,0,.25); }
 #ca-at[data-look="b"] .cols { margin: 0 -16px 0; padding: 8px 16px; }
-#ca-at .cols .c-bill, #ca-at .cols .c-where { display: none; }
+#ca-at .cols .c-bill { display: none; }
 #ca-at .trk-h { display: grid; grid-template-columns: repeat(6, 1fr); text-align: center; }
-#ca-at .trk-h .h { display: flex; flex-direction: column; align-items: center; gap: 3px; font-size: 11.5px; font-weight: 700; line-height: 1.1; color: var(--fg); }
+#ca-at .trk-h .h { display: flex; flex-direction: column; align-items: center; gap: 3px; font-size: 11.5px; font-weight: 700; line-height: 1.1; color: var(--fg); white-space: nowrap; }
 #ca-at .trk-h .h svg.ic { width: 20px; height: 20px; color: var(--accent); }
 #ca-at .trk-h .full { display: none; }
-@container (min-width: 520px) { #ca-at .trk-h .full { display: inline; } #ca-at .trk-h .abbr { display: none; } #ca-at .trk-h .h { font-size: 12.5px; } }
+@container (min-width: 680px) { #ca-at .trk-h .full { display: inline; } #ca-at .trk-h .abbr { display: none; } #ca-at .trk-h .h { font-size: 12.5px; } }
 
 /* Bill rows */
 #ca-at .bills { display: grid; gap: 8px; }
@@ -663,6 +648,8 @@ background: var(--shade_white_color);
 #ca-at[data-look="c"] .num a { color: var(--mint); }
 #ca-at .now { margin-top: 12px; font-size: 15px; line-height: 1.4; display: flex; flex-direction: column; gap: 2px; }
 #ca-at .now b { font-weight: 700; font-size: 16px; }
+#ca-at .now .k { flex-basis: 100%; font-size: 12px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--accent); }
+#ca-at[data-look="a"] .now .k { color: #8a5600; }
 #ca-at .now .d a { font-weight: 600; }
 #ca-at .now .pt { color: var(--muted); font-size: 14px; }
 #ca-at .now .pt abbr { text-decoration: none; border: 0; }
@@ -714,12 +701,13 @@ background: var(--shade_white_color);
 
 /* Wide container: one line per bill, columns line up under the step header */
 @container (min-width: 800px) {
-  #ca-at .cols, #ca-at .row { display: grid; grid-template-columns: 210px minmax(320px, 1fr) 250px; gap: 22px; align-items: center; }
-  #ca-at .cols { padding: 10px 31px; }
+  #ca-at .cols { display: grid; grid-template-columns: 200px 1fr; gap: 24px; align-items: end; padding: 10px 31px; }
   #ca-at[data-look="b"] .cols { padding: 10px 16px; }
-  #ca-at .cols .c-bill, #ca-at .cols .c-where { display: block; font-size: 12.5px; font-weight: 700; color: var(--muted); align-self: end; }
-  #ca-at .top { margin: 0; flex-direction: column; align-items: flex-start; }
-  #ca-at .now { margin: 0; }
+  #ca-at .cols .c-bill { display: block; font-size: 12.5px; font-weight: 700; color: var(--muted); }
+  #ca-at .row { display: grid; grid-template-columns: 200px 1fr; grid-template-areas: "top trk" "top now"; gap: 10px 24px; align-items: center; }
+  #ca-at .row .top { grid-area: top; margin: 0; flex-direction: column; align-items: flex-start; }
+  #ca-at .row .trk-w { grid-area: trk; }
+  #ca-at .row .now { grid-area: now; margin: 0; flex-direction: row; flex-wrap: wrap; align-items: baseline; gap: 2px 14px; }
 }
 
 #ca-at .foot { margin-top: 14px; font-size: 13px; color: var(--muted); }
@@ -743,12 +731,7 @@ background: var(--shade_white_color);
       <button type="button" class="ca-btn" data-sort="far" aria-pressed="false">Furthest along</button>
     </div>
   </div>
-  <details class="explain">
-    <summary>What the six steps mean</summary>
-    <ol class="ex" id="ca-ex"></ol>
-    <p class="states"><span><i class="done"></i>Done</span><span><i class="partial"></i>One chamber done, the other not yet</span><span><i></i>Not yet</span></p>
-  </details>
-  <div class="cols" aria-hidden="true"><span class="c-bill">Bill</span><span class="trk-h" id="ca-cols"></span><span class="c-where">Where it stands</span></div>
+  <div class="cols" aria-hidden="true"><span class="c-bill">Bill</span><span class="trk-h" id="ca-cols"></span></div>
   <ol class="bills" id="ca-bills" aria-label="The 12 bills" aria-busy="true"><li class="bill">Loading the latest status from Congress.gov.</li></ol>
   <div class="foot"><p id="ca-src"></p></div>
 </section>
@@ -769,14 +752,6 @@ background: var(--shade_white_color);
     law: '<path d="M15 4.5l4.5 4.5L9.5 19H5v-4.5z"/><path d="M12.5 7l4.5 4.5"/><path d="M4 21.5h16"/>'
   };
   var SHORT = { sub: "Subcmte", committee: "Cmte", house: "House", senate: "Senate", final: "Deal", law: "Law" };
-  var WHAT = {
-    sub: "A small panel of appropriators writes the first draft and votes on it.",
-    committee: "The full Appropriations Committee amends the bill and votes to send it to the floor.",
-    house: "All 435 House members debate the bill and vote on it.",
-    senate: "All 100 senators debate the bill and vote on it.",
-    final: "The House and Senate settle their differences and pass the same text.",
-    law: "The President signs it, and the agencies it covers are funded for the year."
-  };
   function icon(k) { return '<svg class="ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false">' + P[k] + "</svg>"; }
   var still = !!(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) || !("IntersectionObserver" in window);
   var data = null, sortBy = "az", io = null;
@@ -792,7 +767,7 @@ background: var(--shade_white_color);
     return /senate\.gov/.test(v.source) ? v.source.replace(/\.xml$/, ".htm") : null;
   }
 
-  // "Where it stands": a short headline, then the vote and date, then the party split, each on its own line.
+  // "Current legislative step": a short headline, then the vote and date, then the party split.
   function standing(b) {
     var hp = step(b, "house"), sp = step(b, "senate"), fin = step(b, "final"), law = step(b, "law"), cm = step(b, "committee");
     var head, line = "", v = b.lastVote, parties = "";
@@ -814,7 +789,7 @@ background: var(--shade_white_color);
         }).join(", ");
       }
     }
-    return '<p class="now"><b>' + head + "</b>" + (line ? '<span class="d">' + line + "</span>" : "") + (parties ? '<span class="pt">' + parties + "</span>" : "") + "</p>";
+    return '<p class="now"><span class="k">Current legislative step</span><b>' + head + "</b>" + (line ? '<span class="d">' + line + "</span>" : "") + (parties ? '<span class="pt">' + parties + "</span>" : "") + "</p>";
   }
   function srNote(s) {
     if (s.status === "todo") return "not yet";
@@ -835,10 +810,7 @@ background: var(--shade_white_color);
 
   function renderHead() {
     document.getElementById("ca-cols").innerHTML = data.steps.map(function (s) {
-      return '<span class="h">' + icon(s.key) + '<span class="full">' + esc(s.label).replace("Subcommittee", "Sub&shy;committee") + '</span><span class="abbr">' + SHORT[s.key] + "</span></span>";
-    }).join("");
-    document.getElementById("ca-ex").innerHTML = data.steps.map(function (s, i) {
-      return '<li><span class="badge">' + icon(s.key) + "</span><span><b>" + (i + 1) + ". " + esc(s.label) + "</b>" + WHAT[s.key] + "</span></li>";
+      return '<span class="h">' + icon(s.key) + '<span class="full">' + esc(s.label) + '</span><span class="abbr">' + SHORT[s.key] + "</span></span>";
     }).join("");
   }
 
