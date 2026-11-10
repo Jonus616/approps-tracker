@@ -332,7 +332,8 @@
   syncTop();
   fetch(DATA_URL, { cache: "no-cache" }).then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
     .then(function (d) { data = d; renderHead(); renderBills(); renderSrc(); syncTop(); })
-    .catch(function () {
+    .catch(function (err) {
+      if (window.console) console.error("ca-at tracker:", err);
       document.getElementById("ca-bills").innerHTML = '<li class="err">The latest status could not load. See the <a href="https://www.congress.gov/crs-appropriations-status-table">CRS Appropriations Status Table</a> on Congress.gov.</li>';
       document.getElementById("ca-bills").setAttribute("aria-busy", "false");
     });
