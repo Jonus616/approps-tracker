@@ -607,9 +607,6 @@ background: var(--shade_white_color);
   border-radius: var(--radius); padding: 16px 16px 14px; margin: 8px 0 28px; text-align: left;
 }
 #ca-at[data-look="b"] { --bg: #fff; --card: #fff; --accent: var(--cardinal); --todo: #E3E7EB; --ring: var(--navy); --radius: 0px; padding: 16px 16px 8px; border-top: 3px solid var(--navy); }
-#ca-at[data-look="c"] { --bg: var(--navy); --fg: var(--ivory); --muted: rgba(248,241,233,.82); --card: rgba(255,255,255,.07); --line: rgba(248,241,233,.16); --line-strong: rgba(248,241,233,.4);
-  --accent: #EA9E83; --done: var(--mint); --done-fg: var(--navy-deep); --todo: rgba(248,241,233,.28); --todo-icon: rgba(248,241,233,.55); --ring: var(--mint);
-  --partial-bg: rgba(165,233,217,.22); --chip-on: var(--ivory); --chip-on-fg: var(--navy); --stripe: rgba(255,255,255,.06); --glow: rgba(165,233,217,.3); }
 #ca-at *, #ca-at *::before, #ca-at *::after { box-sizing: border-box; }
 #ca-at ol, #ca-at ul, #ca-at li { margin: 0; padding: 0; list-style: none; }
 #ca-at li::before, #ca-at li::marker { content: none; }
@@ -630,12 +627,13 @@ background: var(--shade_white_color);
 /* Step header: stays under the site's menu bar while you scroll the list */
 #ca-at .cols { position: sticky; top: var(--ca-top); z-index: 5; display: grid; grid-template-columns: 1fr; padding: 8px 31px 8px; margin: 0 -16px 8px; background: var(--bg); border-bottom: 1px solid var(--line-strong); box-shadow: 0 6px 10px -8px rgba(0,0,0,.25); }
 #ca-at[data-look="b"] .cols { margin: 0 -16px 0; padding: 8px 16px; }
-#ca-at .cols .c-bill { display: none; }
+#ca-at .cols .c-bill, #ca-at .cols .c-where { display: none; }
 #ca-at .trk-h { display: grid; grid-template-columns: repeat(6, 1fr); text-align: center; }
 #ca-at .trk-h .h { display: flex; flex-direction: column; align-items: center; gap: 3px; font-size: 11.5px; font-weight: 700; line-height: 1.1; color: var(--fg); white-space: nowrap; }
 #ca-at .trk-h .h svg.ic { width: 20px; height: 20px; color: var(--accent); }
 #ca-at .trk-h .full { display: none; }
-@container (min-width: 680px) { #ca-at .trk-h .full { display: inline; } #ca-at .trk-h .abbr { display: none; } #ca-at .trk-h .h { font-size: 12.5px; } }
+@container (min-width: 680px) and (max-width: 799px) { #ca-at .trk-h .full { display: inline; } #ca-at .trk-h .abbr { display: none; } }
+@container (min-width: 1080px) { #ca-at .trk-h .full { display: inline; } #ca-at .trk-h .abbr { display: none; } #ca-at .trk-h .h { font-size: 12.5px; } }
 
 /* Bill rows */
 #ca-at .bills { display: grid; gap: 8px; }
@@ -645,7 +643,6 @@ background: var(--shade_white_color);
 #ca-at .top { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 2px 12px; margin-bottom: 12px; }
 #ca-at .bill h4 { font-family: inherit; font-size: 18px; font-weight: 700; line-height: 1.25; color: var(--fg); }
 #ca-at .num { font-size: 15px; font-weight: 600; white-space: nowrap; }
-#ca-at[data-look="c"] .num a { color: var(--mint); }
 #ca-at .now { margin-top: 12px; font-size: 15px; line-height: 1.4; display: flex; flex-direction: column; gap: 2px; }
 #ca-at .now b { font-weight: 700; font-size: 16px; }
 #ca-at .now .k { flex-basis: 100%; font-size: 12px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--accent); }
@@ -662,10 +659,8 @@ background: var(--shade_white_color);
 #ca-at .st { position: relative; z-index: 1; display: flex; justify-content: center; }
 #ca-at .dot { width: 34px; height: 34px; border-radius: 50%; background: var(--card); border: 3px solid var(--todo); color: var(--todo-icon); display: grid; place-items: center; }
 #ca-at[data-look="a"] .dot { background: var(--paper); }
-#ca-at[data-look="c"] .dot { background: var(--navy); }
 #ca-at .st.done .dot { background: var(--done); border-color: var(--done); color: var(--done-fg); }
 #ca-at .st.partial .dot { background: var(--partial-bg); border-color: var(--ring); color: var(--fg); }
-#ca-at[data-look="c"] .st.partial .dot { background: #35596f; }
 #ca-at .st.cur .dot { box-shadow: 0 0 0 5px var(--glow); }
 /* Look B: a segmented bar; the icons live in the step header */
 #ca-at[data-look="b"] .trk { gap: 3px; }
@@ -680,6 +675,8 @@ background: var(--shade_white_color);
 
 /* Step-by-step table */
 #ca-at details.more { margin-top: 12px; border-top: 1px solid var(--line); }
+#ca-at details.more > summary { font-size: 14px; font-weight: 600; min-height: 44px; }
+#ca-at details.more > summary::before { width: 20px; height: 20px; font-size: 14px; }
 #ca-at summary { cursor: pointer; color: var(--fg) !important; font-family: inherit; font-weight: 700; font-size: 15px; min-height: 44px; display: flex; align-items: center; gap: 8px; list-style: none; }
 #ca-at summary::-webkit-details-marker { display: none; }
 #ca-at summary::before { content: "+"; display: inline-grid; place-items: center; width: 22px; height: 22px; border-radius: 50%; border: 2px solid currentColor; font-size: 15px; line-height: 1; flex: none; }
@@ -701,13 +698,20 @@ background: var(--shade_white_color);
 
 /* Wide container: one line per bill, columns line up under the step header */
 @container (min-width: 800px) {
-  #ca-at .cols { display: grid; grid-template-columns: 200px 1fr; gap: 24px; align-items: end; padding: 10px 31px; }
+  #ca-at .cols, #ca-at .row { display: grid; grid-template-columns: 180px minmax(0, 1fr) 250px; gap: 20px; align-items: center; }
+  #ca-at .cols { padding: 10px 31px; align-items: end; }
   #ca-at[data-look="b"] .cols { padding: 10px 16px; }
-  #ca-at .cols .c-bill { display: block; font-size: 12.5px; font-weight: 700; color: var(--muted); }
-  #ca-at .row { display: grid; grid-template-columns: 200px 1fr; grid-template-areas: "top trk" "top now"; gap: 10px 24px; align-items: center; }
-  #ca-at .row .top { grid-area: top; margin: 0; flex-direction: column; align-items: flex-start; }
-  #ca-at .row .trk-w { grid-area: trk; }
-  #ca-at .row .now { grid-area: now; margin: 0; flex-direction: row; flex-wrap: wrap; align-items: baseline; gap: 2px 14px; }
+  #ca-at .cols .c-bill, #ca-at .cols .c-where { display: block; font-size: 12.5px; font-weight: 700; color: var(--muted); }
+  #ca-at .row .top { margin: 0; flex-direction: column; align-items: flex-start; }
+  #ca-at .row .now { margin: 0; }
+  #ca-at .row .now .k { display: none; }
+  #ca-at .row .now b { font-size: 15px; }
+  #ca-at .row .now .d, #ca-at .row .now b { white-space: nowrap; }
+}
+/* On a wide screen the tracker runs wider than the page's text column, so the step track has room
+   for every step name on one line. */
+@media (min-width: 1140px) {
+  #ca-at { width: min(1120px, calc(100vw - 72px)); margin-left: calc(50% - min(560px, 50vw - 36px)); }
 }
 
 #ca-at .foot { margin-top: 14px; font-size: 13px; color: var(--muted); }
@@ -731,7 +735,7 @@ background: var(--shade_white_color);
       <button type="button" class="ca-btn" data-sort="far" aria-pressed="false">Furthest along</button>
     </div>
   </div>
-  <div class="cols" aria-hidden="true"><span class="c-bill">Bill</span><span class="trk-h" id="ca-cols"></span></div>
+  <div class="cols" aria-hidden="true"><span class="c-bill">Bill</span><span class="trk-h" id="ca-cols"></span><span class="c-where">Current legislative step</span></div>
   <ol class="bills" id="ca-bills" aria-label="The 12 bills" aria-busy="true"><li class="bill">Loading the latest status from Congress.gov.</li></ol>
   <div class="foot"><p id="ca-src"></p></div>
 </section>
@@ -809,7 +813,9 @@ background: var(--shade_white_color);
   }
 
   function renderHead() {
-    document.getElementById("ca-cols").innerHTML = data.steps.map(function (s) {
+    var cols = root.querySelector("#ca-cols");
+    if (!cols) return;
+    cols.innerHTML = data.steps.map(function (s) {
       return '<span class="h">' + icon(s.key) + '<span class="full">' + esc(s.label) + '</span><span class="abbr">' + SHORT[s.key] + "</span></span>";
     }).join("");
   }
@@ -881,7 +887,9 @@ background: var(--shade_white_color);
   function renderSrc() {
     var when;
     try { when = new Date(data.lastUpdated).toLocaleString("en-US", { timeZone: "America/New_York", month: "long", day: "numeric", year: "numeric", hour: "numeric", minute: "2-digit" }) + " ET"; } catch (e) { when = data.lastUpdated; }
-    document.getElementById("ca-src").innerHTML = "Updates automatically. Last checked " + esc(when) +
+    var src = root.querySelector("#ca-src");
+    if (!src) { var foot = root.querySelector(".foot") || root; src = document.createElement("p"); src.id = "ca-src"; foot.appendChild(src); }
+    src.innerHTML = "Updates automatically. Last checked " + esc(when) +
       '. Sources: <a href="https://www.congress.gov/">Congress.gov</a> bill actions; roll calls from the House Clerk and the U.S. Senate; markup dates from the <a href="https://www.congress.gov/crs-appropriations-status-table">CRS status table</a>.';
   }
 
@@ -898,7 +906,12 @@ background: var(--shade_white_color);
   window.addEventListener("resize", syncTop);
   syncTop();
   fetch(DATA_URL, { cache: "no-cache" }).then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
-    .then(function (d) { data = d; renderHead(); renderBills(); renderSrc(); syncTop(); })
+    .then(function (d) {
+      data = d;
+      // Each part renders on its own, so a theme script touching one element can never blank the list.
+      [renderBills, renderHead, renderSrc].forEach(function (f) { try { f(); } catch (e) { if (window.console) console.error("ca-at tracker:", e); } });
+      syncTop();
+    })
     .catch(function (err) {
       if (window.console) console.error("ca-at tracker:", err);
       document.getElementById("ca-bills").innerHTML = '<li class="err">The latest status could not load. See the <a href="https://www.congress.gov/crs-appropriations-status-table">CRS Appropriations Status Table</a> on Congress.gov.</li>';
@@ -1283,7 +1296,6 @@ html.high-contrast-on {
   <span id="pv-g" role="group" aria-label="Tracker look">
     <button type="button" data-look="a" aria-pressed="true">A: Cards</button>
     <button type="button" data-look="b" aria-pressed="false">B: Ledger</button>
-    <button type="button" data-look="c" aria-pressed="false">C: Navy</button>
   </span>
 </div>
 <style>
@@ -1297,7 +1309,7 @@ body{padding-bottom:64px!important}
 <script>(function(){function init(){var b=document.querySelectorAll("#pv-bar button");function pick(l){if(window.CA_AT_setLook)window.CA_AT_setLook(l);
 Array.prototype.forEach.call(b,function(x){x.setAttribute("aria-pressed",x.getAttribute("data-look")===l?"true":"false")});try{history.replaceState(null,"",location.pathname+"#look-"+l)}catch(e){}}
 Array.prototype.forEach.call(b,function(x){x.addEventListener("click",function(){pick(x.getAttribute("data-look"))})});
-var m=/look-([abc])/.exec(location.hash);if(m)pick(m[1]);}
+var m=/look-([ab])/.exec(location.hash);if(m)pick(m[1]);}
 if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",init);else init();})();</script>
 </body>
 </html>
