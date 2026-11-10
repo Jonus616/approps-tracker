@@ -645,8 +645,6 @@ background: var(--shade_white_color);
 #ca-at .num { font-size: 15px; font-weight: 600; white-space: nowrap; }
 #ca-at .now { margin-top: 12px; font-size: 15px; line-height: 1.4; display: flex; flex-direction: column; gap: 2px; }
 #ca-at .now b { font-weight: 700; font-size: 16px; }
-#ca-at .now .k { flex-basis: 100%; font-size: 12px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--accent); }
-#ca-at[data-look="a"] .now .k { color: #8a5600; }
 #ca-at .now .d a { font-weight: 600; }
 #ca-at .now .pt { color: var(--muted); font-size: 14px; }
 #ca-at .now .pt abbr { text-decoration: none; border: 0; }
@@ -704,7 +702,6 @@ background: var(--shade_white_color);
   #ca-at .cols .c-bill, #ca-at .cols .c-where { display: block; font-size: 12.5px; font-weight: 700; color: var(--muted); }
   #ca-at .row .top { margin: 0; flex-direction: column; align-items: flex-start; }
   #ca-at .row .now { margin: 0; }
-  #ca-at .row .now .k { display: none; }
   #ca-at .row .now b { font-size: 15px; }
   #ca-at .row .now .d, #ca-at .row .now b { white-space: nowrap; }
 }
@@ -793,7 +790,7 @@ background: var(--shade_white_color);
         }).join(", ");
       }
     }
-    return '<p class="now"><span class="k">Current legislative step</span><b>' + head + "</b>" + (line ? '<span class="d">' + line + "</span>" : "") + (parties ? '<span class="pt">' + parties + "</span>" : "") + "</p>";
+    return '<p class="now"><b>' + head + "</b>" + (line ? '<span class="d">' + line + "</span>" : "") + (parties ? '<span class="pt">' + parties + "</span>" : "") + "</p>";
   }
   function srNote(s) {
     if (s.status === "todo") return "not yet";
