@@ -1,5 +1,5 @@
 {
- "lastUpdated": "2026-11-10T20:23:14Z",
+ "lastUpdated": "2026-11-10T23:16:28Z",
  "fiscalYear": 2027,
  "congress": 119,
  "source": {
@@ -7,7 +7,7 @@
   "votes": "House Clerk roll-call XML and senate.gov roll-call XML",
   "markups": "CRS Appropriations Status Table (subcommittee and committee markup dates, as of 2026-11-06)",
   "calls": {
-   "congress": 28,
+   "congress": 38,
    "govinfo": 0,
    "clerk": 6,
    "senate": 1
@@ -1522,5 +1522,6 @@
  ],
  "flags": [
   "No Senate bill numbers yet for any of the 12 bills (none in Congress.gov records or the CRS table). Add them to config/bills.json when the Senate committee reports."
- ]
+ ],
+ "discovered": []
 }
