@@ -6,4 +6,4 @@ Staff-review mockup for Concord Action. Not an official Concord page; not indexe
   replaced by the tracker. `widget.html`: the tracker block alone, the part that would go into WordPress.
 - Data: `python -I scripts/fetch_status.py --out data/approps.json` (Congress.gov bill records, House Clerk and
   Senate roll calls; no AI in the data path). Bill list: `config/bills.json`.
-- Daily refresh: `.github/workflows/refresh.yml`, schedule switched off.
+- Refresh: a Task Scheduler job on Jonus's PC runs `scripts/fetch_status.py` on the Congress.gov API six times a day and pushes `data/approps.json` when it changes.

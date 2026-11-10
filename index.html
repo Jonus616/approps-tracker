@@ -600,13 +600,13 @@ background: var(--shade_white_color);
   --mint: #A5E9D9; --gray: #5E6670;
   --bg: var(--ivory); --fg: var(--navy); --muted: var(--gray); --card: var(--paper); --line: rgba(29,60,92,.16);
   --accent: var(--gold); --done: var(--navy); --done-fg: #fff; --todo: #C9CED4; --ring: var(--gold);
-  --chip-on: var(--navy); --chip-on-fg: #fff; --radius: 14px;
+  --chip-on: var(--navy); --chip-on-fg: #fff; --radius: 14px; --stripe: rgba(29,60,92,.05); --line-strong: rgba(29,60,92,.35);
   container-type: inline-size;
   background: var(--bg); color: var(--fg); font-family: inherit; font-size: 16px; line-height: 1.45;
   border-radius: var(--radius); padding: 20px 16px 16px; margin: 8px 0 28px; text-align: left;
 }
 #ca-at[data-look="b"] { --bg: #fff; --card: #fff; --accent: var(--cardinal); --todo: #E3E7EB; --ring: var(--navy); --radius: 0px; padding: 16px 16px 8px; border-top: 3px solid var(--navy); }
-#ca-at[data-look="c"] { --bg: var(--navy); --fg: var(--ivory); --muted: rgba(248,241,233,.75); --card: rgba(255,255,255,.07); --line: rgba(248,241,233,.16);
+#ca-at[data-look="c"] { --stripe: rgba(255,255,255,.06); --line-strong: rgba(248,241,233,.4); --bg: var(--navy); --fg: var(--ivory); --muted: rgba(248,241,233,.82); --card: rgba(255,255,255,.07); --line: rgba(248,241,233,.16);
   --accent: #EA9E83; --done: var(--mint); --done-fg: var(--navy-deep); --todo: rgba(248,241,233,.25); --ring: var(--mint); --chip-on: var(--ivory); --chip-on-fg: var(--navy); }
 #ca-at *, #ca-at *::before, #ca-at *::after { box-sizing: border-box; }
 #ca-at ol, #ca-at ul, #ca-at li { margin: 0; padding: 0; list-style: none; }
@@ -617,20 +617,7 @@ background: var(--shade_white_color);
 #ca-at a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
 #ca-at a:focus-visible, #ca-at button:focus-visible, #ca-at summary:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; border-radius: 6px; }
 #ca-at .sr { position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
-#ca-at h3.k { font-family: inherit; line-height: 1.3; font-size: 13px; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; }
 
-/* How many of 12 reached each step */
-#ca-at .pipe { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 18px; }
-#ca-at .pipe li { background: var(--card); border: 1px solid var(--line); border-radius: calc(var(--radius) - 4px); padding: 10px; }
-#ca-at[data-look="b"] .pipe li { border-width: 0 0 0 3px; border-color: var(--line); border-radius: 0; padding: 4px 10px; }
-#ca-at .pipe .n { display: block; font-size: 28px; font-weight: 800; line-height: 1; font-variant-numeric: tabular-nums; }
-#ca-at .pipe .n small { font-size: 14px; font-weight: 600; color: var(--muted); }
-#ca-at .pipe .l { display: block; font-size: 13px; font-weight: 600; line-height: 1.2; margin: 4px 0 8px; min-height: 2.4em; }
-#ca-at .waffle { display: grid; grid-template-columns: repeat(12, 1fr); gap: 2px; }
-#ca-at .waffle i { height: 7px; border-radius: 2px; background: var(--todo); transform-origin: left; }
-#ca-at .waffle i.on { background: var(--done); }
-#ca-at .waffle i.half { background: linear-gradient(90deg, var(--done) 50%, var(--todo) 50%); }
-@container (min-width: 700px) { #ca-at .pipe { grid-template-columns: repeat(6, 1fr); } }
 
 /* Tools */
 #ca-at .bar { display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: center; justify-content: space-between; margin-bottom: 10px; }
@@ -686,14 +673,24 @@ background: var(--shade_white_color);
 
 /* Step-by-step details */
 #ca-at details { margin-top: 10px; border-top: 1px solid var(--line); }
-#ca-at summary { cursor: pointer; font-weight: 700; font-size: 15px; min-height: 44px; display: flex; align-items: center; gap: 8px; list-style: none; }
+#ca-at summary { cursor: pointer; color: var(--fg) !important; font-family: inherit; font-weight: 700; font-size: 15px; min-height: 44px; display: flex; align-items: center; gap: 8px; list-style: none; }
 #ca-at summary::-webkit-details-marker { display: none; }
 #ca-at summary::before { content: "+"; display: inline-grid; place-items: center; width: 22px; height: 22px; border-radius: 50%; border: 2px solid currentColor; font-size: 15px; line-height: 1; }
 #ca-at details[open] summary::before { content: "\2212"; }
-#ca-at table { width: 100%; border-collapse: collapse; font-size: 14px; margin: 0 0 8px; background: transparent; border: 0; }
-#ca-at th, #ca-at td { text-align: left; vertical-align: top; padding: 7px 8px 7px 0; border: 0; border-bottom: 1px solid var(--line); background: transparent; color: var(--fg); }
-#ca-at thead th { font-size: 12px; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); }
-#ca-at .meta { font-size: 13px; color: var(--muted); margin-top: 6px; }
+#ca-at table { width: 100%; border-collapse: collapse; font-family: inherit; font-size: 15px; line-height: 1.35; margin: 0 0 8px; background: transparent !important; border: 0 !important; }
+#ca-at table thead, #ca-at table tbody, #ca-at table tr { background: transparent !important; border: 0 !important; }
+#ca-at table tbody tr:nth-child(even) { background: var(--stripe) !important; }
+#ca-at table th, #ca-at table td { font-family: inherit !important; text-align: left; vertical-align: top; padding: 9px 10px !important; border: 0 !important; border-bottom: 1px solid var(--line) !important; background: transparent !important; color: var(--fg) !important; font-size: 15px !important; line-height: 1.35 !important; text-transform: none !important; letter-spacing: 0 !important; }
+#ca-at table tbody th { font-weight: 700 !important; width: 34%; }
+#ca-at table td { font-weight: 400 !important; }
+@container (max-width: 520px) {
+  #ca-at table th, #ca-at table td { padding: 8px 6px !important; font-size: 14px !important; }
+  #ca-at table td { white-space: nowrap; }
+  #ca-at table tbody th { width: auto; }
+}
+#ca-at table td.no { color: var(--muted) !important; }
+#ca-at table thead th { font-size: 12px !important; font-weight: 700 !important; text-transform: uppercase !important; letter-spacing: .06em !important; color: var(--muted) !important; border-bottom: 2px solid var(--line-strong) !important; }
+#ca-at .meta { font-size: 14px; color: var(--muted); margin-top: 8px; }
 
 /* Wide container: one line per bill, columns line up */
 @container (min-width: 780px) {
@@ -717,15 +714,11 @@ background: var(--shade_white_color);
 #ca-at.anim.in .bill { opacity: 1; transform: none; transition: opacity .45s ease, transform .45s cubic-bezier(.2,.7,.2,1); transition-delay: calc(var(--i, 0) * 40ms); }
 #ca-at.anim .dot { transform: scale(.4); }
 #ca-at.anim.in .dot { transform: scale(1); transition-delay: calc(var(--i, 0) * 40ms + var(--s, 0) * 100ms + 150ms); }
-#ca-at.anim .waffle i { transform: scaleX(0); }
-#ca-at.anim.in .waffle i { transform: scaleX(1); transition: transform .35s ease; transition-delay: calc(var(--j, 0) * 22ms); }
 #ca-at.calm *, #ca-at.calm *::before, #ca-at.calm *::after { transition: none !important; animation: none !important; }
 @media (prefers-reduced-motion: reduce) { #ca-at *, #ca-at *::before, #ca-at *::after { transition: none !important; animation: none !important; } }
 </style>
 
-<section id="ca-at" data-look="a" aria-labelledby="ca-at-h">
-  <h3 class="k" id="ca-at-h">Live status of the 12 fiscal 2027 spending bills</h3>
-  <ol class="pipe" id="ca-pipe" aria-label="How many of the 12 bills have reached each step"></ol>
+<section id="ca-at" data-look="a" aria-label="Appropriations bill tracker">
   <div class="bar">
     <div class="chips" role="group" aria-label="Sort the bills">
       <button type="button" class="ca-btn" data-sort="az" aria-pressed="true">A to Z</button>
@@ -805,15 +798,8 @@ background: var(--shade_white_color);
     return s.status === "done" ? fd(s.date) : "Not yet";
   }
 
-  function renderPipe() {
-    document.getElementById("ca-pipe").innerHTML = data.steps.map(function (s, idx) {
-      var full = 0, half = 0, cells = "";
-      data.bills.forEach(function (b) { var st = step(b, s.key).status; if (st === "done") full++; else if (st === "partial") half++; });
-      for (var i = 0; i < 12; i++) cells += '<i class="' + (i < full ? "on" : i < full + half ? "half" : "") + '" style="--j:' + (idx * 2 + i) + '"></i>';
-      return '<li><span class="n">' + (full + half) + ' <small>of 12</small></span><span class="l">' + esc(s.label) + (half && !full ? " (House only)" : "") +
-        '</span><span class="waffle" aria-hidden="true">' + cells + "</span></li>";
-    }).join("");
-    document.getElementById("ca-cols").innerHTML = data.steps.map(function (s) { return "<span>" + esc(s.label) + "</span>"; }).join("");
+  function renderCols() {
+    document.getElementById("ca-cols").innerHTML = data.steps.map(function (s) { return "<span>" + esc(s.label).replace("Subcommittee", "Sub&shy;committee") + "</span>"; }).join("");
   }
 
   function renderBills() {
@@ -829,7 +815,8 @@ background: var(--shade_white_color);
       }).join("");
       var links = b.bills.map(function (x) { return '<a href="' + esc(x.url) + '">' + esc(x.label) + '<span class="sr"> on Congress.gov</span></a>'; }).join(" ");
       var vl = voteLine(b.lastVote);
-      var rows = b.steps.map(function (s) { return '<tr><th scope="row">' + esc(s.label) + "</th><td>" + cell(s, "house") + "</td><td>" + cell(s, "senate") + "</td></tr>"; }).join("");
+      var td = function (v) { return '<td' + (v === "Not yet" || v === "-" ? ' class="no"' : "") + ">" + v + "</td>"; };
+      var rows = b.steps.map(function (s) { return '<tr><th scope="row">' + esc(s.label) + "</th>" + td(cell(s, "house")) + td(cell(s, "senate")) + "</tr>"; }).join("");
       var la = b.latestAction ? '<p class="meta">Latest official action, ' + fd(b.latestAction.date) + ": " + esc(b.latestAction.text) + "</p>" : "";
       return '<li class="bill" style="--i:' + i + '"><div class="row">' +
         '<div class="top"><h4 id="ca-b-' + b.id + '">' + esc(b.short) + '</h4><span class="num">' + links + "</span></div>" +
@@ -850,7 +837,7 @@ background: var(--shade_white_color);
   }
 
   function render(animate) {
-    renderPipe(); renderBills(); renderSrc();
+    renderCols(); renderBills(); renderSrc();
     if (animate && !calm) {
       root.classList.remove("in");
       var fills = root.querySelectorAll(".trk-w .fill");
